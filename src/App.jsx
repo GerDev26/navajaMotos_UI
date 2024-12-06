@@ -1,23 +1,29 @@
-import './App.css'
-import { useFetch } from './hooks/useFetch'
+import { Route, Routes } from 'react-router-dom'
+import { routeEnums } from './enums/routeEnums'
+import { NavigationLayout } from './layouts/NavigationLayout'
+import { Users } from './pages/Users'
+import { Motobikes } from './pages/Motobikes'
+import { Invoices } from './pages/Invoices'
 
-function App() {
-
-  const {data, loading} = useFetch({
-    endpoint: 'http://127.0.0.1:8000/vehicle/model'
-  })
-
-  if(loading){
-    return 'Cargando'
-  }
-
+function App () {
   return (
     <>
-      {
-        data.data.map(d => (
-          <p key={d.id}>{d.description}</p>
-        ))
-      }
+      <Routes>
+        <Route element={<NavigationLayout />}>
+          <Route
+            element={<Motobikes />}
+            path={routeEnums.MOTOBIKES}
+          />
+          <Route
+            element={<Users />}
+            path={routeEnums.USERS}
+          />
+          <Route
+            element={<Invoices />}
+            path={routeEnums.INVOICES}
+          />
+        </Route>
+      </Routes>
     </>
   )
 }

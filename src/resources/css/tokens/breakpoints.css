@@ -1,0 +1,6 @@
+:root{
+  --breakpoint-mobile: 480px; /* Dispositivos pequeños como teléfonos */
+  --breakpoint-tablet: 768px; /* Tablets y pantallas medianas */
+  --breakpoint-laptop: 1024px; /* Laptops y pantallas grandes */
+  --breakpoint-desktop: 1440px; /* Escritorios y pantallas ultra grandes */
+}
