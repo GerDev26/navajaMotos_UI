@@ -1,0 +1,25 @@
+:root {
+  --mobile-scale: 1.125;
+  --mobile-base-size: 16px;
+
+  --desktop-scale: 1.125;
+  --desktop-base-size: 18px;
+
+  --desktop-font-size-small: calc(var(--desktop-base-size) / var(--desktop-scale));
+  --desktop-font-size-p: calc(var(--desktop-base-size));
+  --desktop-font-size-h6: calc(var(--desktop-base-size) * var(--desktop-scale));
+  --desktop-font-size-h5: calc(var(--desktop-base-size) * var(--desktop-scale) * var(--desktop-scale));
+  --desktop-font-size-h4: calc(var(--desktop-base-size) * var(--desktop-scale) * var(--desktop-scale) * var(--desktop-scale));
+  --desktop-font-size-h3: calc(var(--desktop-base-size) * var(--desktop-scale) * var(--desktop-scale) * var(--desktop-scale) * var(--desktop-scale));
+  --desktop-font-size-h2: calc(var(--desktop-base-size) * var(--desktop-scale) * var(--desktop-scale) * var(--desktop-scale) * var(--desktop-scale) * var(--desktop-scale));
+  --desktop-font-size-h1: calc(var(--desktop-base-size) * var(--desktop-scale) * var(--desktop-scale) * var(--desktop-scale) * var(--desktop-scale) * var(--desktop-scale) * var(--desktop-scale));
+
+  --mobile-font-size-small: calc(var(--mobile-base-size) / var(--mobile-scale));
+  --mobile-font-size-p: calc(var(--mobile-base-size));
+  --mobile-font-size-h6: calc(var(--mobile-base-size) * var(--mobile-scale));
+  --mobile-font-size-h5: calc(var(--mobile-base-size) * var(--mobile-scale) * var(--mobile-scale));
+  --mobile-font-size-h4: calc(var(--mobile-base-size) * var(--mobile-scale) * var(--mobile-scale) * var(--mobile-scale));
+  --mobile-font-size-h3: calc(var(--mobile-base-size) * var(--mobile-scale) * var(--mobile-scale) * var(--mobile-scale) * var(--mobile-scale));
+  --mobile-font-size-h2: calc(var(--mobile-base-size) * var(--mobile-scale) * var(--mobile-scale) * var(--mobile-scale) * var(--mobile-scale) * var(--mobile-scale));
+  --mobile-font-size-h1: calc(var(--mobile-base-size) * var(--mobile-scale) * var(--mobile-scale) * var(--mobile-scale) * var(--mobile-scale) * var(--mobile-scale) * var(--mobile-scale));
+}

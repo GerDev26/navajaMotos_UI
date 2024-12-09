@@ -11,9 +11,9 @@ export function useFetch ({ endpoint, headers, queryParams } = initialState) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
 
-  
   useEffect(() => {
     const url = queryParams ? `${endpoint}?${queryParams}` : endpoint
+    console.log(url)
     setLoading(true)
     fetch(url, {
       Accept: 'application/json',

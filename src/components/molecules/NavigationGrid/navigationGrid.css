@@ -1,0 +1,27 @@
+.navigation-grid {
+    display: grid;
+    grid-template-rows: 9fr 1fr;
+    grid-template-columns: none;
+    height: 100vh;
+    width: 100vw;
+}
+.navigation-grid header {
+    grid-row: 2/3;
+}
+.navigation-grid main {
+    overflow: scroll;
+    width: 100%;
+    padding: var(--spacing-1);
+}
+@media (min-width: 768px) {
+    .navigation-grid {
+        grid-template-columns: 1.5fr 8.5fr;
+        grid-template-rows: none;
+    }
+    .navigation-grid header {
+        grid-row: 1/2;
+    }
+    .navigation-grid main {
+        min-height: 100vh;
+    }
+}

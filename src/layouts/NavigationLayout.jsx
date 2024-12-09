@@ -1,13 +1,12 @@
 import { Outlet } from 'react-router-dom'
 import { Navbar } from '../components/organisms/Navbar'
+import { NavigationGrid } from '../components/molecules/NavigationGrid'
 
 export function NavigationLayout () {
   return (
-    <>
-      <Navbar />
-      <main>
-        <Outlet />
-      </main>
-    </>
+    <NavigationGrid
+      navbar={<Navbar />}
+      content={<Outlet />}
+    />
   )
 }

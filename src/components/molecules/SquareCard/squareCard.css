@@ -1,0 +1,17 @@
+.square-card{
+    background-color: var(--primary-500);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: var(--border-radius-1);
+    color: white;
+    min-height: 120px;
+    transition: all 100ms ease-in-out;
+    padding: var(--spacing-1);
+
+    &&:hover{
+        background-color: var(--primary-600);
+    }
+}

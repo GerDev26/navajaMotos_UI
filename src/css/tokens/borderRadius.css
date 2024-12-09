@@ -1,0 +1,38 @@
+:root {
+    --mobile-border-radius-1: 4px;
+    --mobile-border-radius-2: 8px;
+    --mobile-border-radius-3: 12px;
+    --mobile-border-radius-4: 16px;
+    --mobile-border-radius-5: 24px;
+    --mobile-border-radius-6: 32px;
+  
+    --desktop-border-radius-1: 4px;
+    --desktop-border-radius-2: 8px;;
+    --desktop-border-radius-3: 12px;
+    --desktop-border-radius-4: 16px;
+    --desktop-border-radius-5: 24px;
+    --desktop-border-radius-6: 32px;
+  }
+  
+  @media (min-width: 768px) {
+    :root {
+      --border-radius-1: var(--desktop-border-radius-1);
+      --border-radius-2: var(--desktop-border-radius-2);
+      --border-radius-3: var(--desktop-border-radius-3);
+      --border-radius-4: var(--desktop-border-radius-4);
+      --border-radius-5: var(--desktop-border-radius-5);
+      --border-radius-6: var(--desktop-border-radius-6);
+    }
+  }
+  
+  @media (max-width: 767px) {
+    :root {
+      --border-radius-1: var(--mobile-border-radius-1);
+      --border-radius-2: var(--mobile-border-radius-2);
+      --border-radius-3: var(--mobile-border-radius-3);
+      --border-radius-4: var(--mobile-border-radius-4);
+      --border-radius-5: var(--mobile-border-radius-5);
+      --border-radius-6: var(--mobile-border-radius-6);
+    }
+  }
+  

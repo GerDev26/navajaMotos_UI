@@ -1,0 +1,38 @@
+:root {
+    --mobile-spacing-1: 4px;
+    --mobile-spacing-2: 8px;
+    --mobile-spacing-3: 12px;
+    --mobile-spacing-4: 16px;
+    --mobile-spacing-5: 24px;
+    --mobile-spacing-6: 32px;
+  
+    --desktop-spacing-1: 8px;
+    --desktop-spacing-2: 16px;
+    --desktop-spacing-3: 24px;
+    --desktop-spacing-4: 32px;
+    --desktop-spacing-5: 40px;
+    --desktop-spacing-6: 48px;
+  }
+  
+  @media (min-width: 768px) {
+    :root {
+      --spacing-1: var(--desktop-spacing-1);
+      --spacing-2: var(--desktop-spacing-2);
+      --spacing-3: var(--desktop-spacing-3);
+      --spacing-4: var(--desktop-spacing-4);
+      --spacing-5: var(--desktop-spacing-5);
+      --spacing-6: var(--desktop-spacing-6);
+    }
+  }
+  
+  @media (max-width: 767px) {
+    :root {
+      --spacing-1: var(--mobile-spacing-1);
+      --spacing-2: var(--mobile-spacing-2);
+      --spacing-3: var(--mobile-spacing-3);
+      --spacing-4: var(--mobile-spacing-4);
+      --spacing-5: var(--mobile-spacing-5);
+      --spacing-6: var(--mobile-spacing-6);
+    }
+  }
+  

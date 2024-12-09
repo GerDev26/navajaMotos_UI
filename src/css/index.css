@@ -1,6 +1,9 @@
 @import url(./tokens/breakpoints.css);
 @import url(./tokens/colors.css);
 @import url(./tokens/fontSize.css);
+@import url(./tokens/spacing.css);
+@import url(./tokens/borderRadius.css);
+@import url(./animations.css);
 @import url(./font.css);
 
 *{

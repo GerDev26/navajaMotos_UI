@@ -10,42 +10,49 @@ import PropTypes from 'prop-types'
 
 export function Navbar () {
   return (
-    <header className='navbar'>
-      <nav className='navbar__menu'>
-        <NavItem
-          icon={<MotobikeIcon />}
-          to={routeEnums.MOTOBIKES}
-          size='28px'
-          color='white'
-        />
-        <NavItem
-          icon={<UserIcon />}
-          to={routeEnums.USERS}
-          size='28px'
-          color='white'
-        />
-        <NavItem
-          icon={<InvoiceIcon />}
-          to={routeEnums.INVOICES}
-          size='28px'
-          color='white'
-        />
-      </nav>
-    </header>
+    <nav className='navbar'>
+      <ul className='navbar__menu'>
+        <li>
+          <NavItem
+            icon={<MotobikeIcon />}
+            to={routeEnums.MOTOBIKES}
+            size='28px'
+            color='white'
+          />
+
+        </li>
+        <li>
+          <NavItem
+            icon={<UserIcon />}
+            to={routeEnums.USERS}
+            size='28px'
+            color='white'
+          />
+
+        </li>
+        <li>
+          <NavItem
+            icon={<InvoiceIcon />}
+            to={routeEnums.INVOICES}
+            size='28px'
+            color='white'
+          />
+        </li>
+      </ul>
+    </nav>
   )
 }
 
 export function NavItem ({ to, icon, size, color }) {
   const path = useLocation()
-  const isActive = path.pathname === `/${to}`
 
-  const activeStyle = isActive ? 'nav-item__active-background' : ''
+  const isActive = path.pathname === `/${to}`
+  const isItemActive = isActive ? 'nav-item nav-item--active' : 'nav-item'
 
   return (
-    <Link to={to} className='nav-item'>
-      <div className={activeStyle} />
+    <Link to={`/${to}`} className={isItemActive}>
       {React.cloneElement(icon, { fill: isActive, size, color })}
-      <small style={{ marginTop: '8px' }}>{firstLetterMayus(to)}</small>
+      <small>{firstLetterMayus(to)}</small>
     </Link>
   )
 }
