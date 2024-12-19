@@ -4,6 +4,6 @@ const API_URL = {
   localNetwork: 'http://192.168.100.143:8000'
 }
 
-const API = API_URL.localNetwork
+const API = API_URL.local
 
 export const MODELS = `${API}/vehicle/model`

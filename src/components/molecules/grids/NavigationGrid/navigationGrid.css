@@ -8,7 +8,6 @@
 }
 .navigation-grid header {
     grid-row: 2/3;
-    overflow: hidden;
 }
 .navigation-grid main {
     overflow-y: scroll;
@@ -17,7 +16,7 @@
 }
 @media (min-width: 768px) {
     .navigation-grid {
-        grid-template-columns: 1fr 9fr;
+        grid-template-columns: 1.5fr 8.5fr;
         grid-template-rows: none;
     }
     .navigation-grid header {
