@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router-dom'
 import { routeEnums } from './enums/routeEnums'
 import { NavigationLayout } from './layouts/NavigationLayout'
-import { Users } from './pages/Users'
-import { Motobikes } from './pages/Motobikes'
-import { Invoices } from './pages/Invoices'
+import { Users } from './pages/admin/Users'
+import { Motobikes } from './pages/admin/Motobikes'
+import { Invoices } from './pages/admin/Invoices'
 
 function App () {
   return (

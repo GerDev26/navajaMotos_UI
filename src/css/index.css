@@ -5,6 +5,7 @@
 @import url(./tokens/borderRadius.css);
 @import url(./animations.css);
 @import url(./font.css);
+@import url(./tokens/shadows.css);
 
 *{
   margin: 0;
@@ -12,7 +13,25 @@
   box-sizing: border-box;
 }
 #root {
-  min-height: 100vh;
+  color: var(--neutral-800);
+  min-height: 100dvh;
   width: 100%;
-  background-color: var(--neutral-50);
+  background-color: var(--neutral-100);
+}
+li{
+  display: block;
+}
+main {
+  scrollbar-width: thin; /* Navegadores Firefox */
+  scrollbar-color: var(--primary-500) var(--neutral-50); /* Color del scroll y del fondo */
+}
+
+/* Para navegadores basados en WebKit (Chrome, Edge, Safari) */
+main::-webkit-scrollbar {
+  width: 12px; /* Ancho del scroll vertical */
+  height: 12px; /* Ancho del scroll horizontal */
+}
+
+main::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Fondo de la pista del scroll */
 }

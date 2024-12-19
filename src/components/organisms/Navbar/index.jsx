@@ -16,8 +16,8 @@ export function Navbar () {
           <NavItem
             icon={<MotobikeIcon />}
             to={routeEnums.MOTOBIKES}
-            size='28px'
-            color='white'
+            size='24px'
+            color='#02b86e'
           />
 
         </li>
@@ -25,17 +25,16 @@ export function Navbar () {
           <NavItem
             icon={<UserIcon />}
             to={routeEnums.USERS}
-            size='28px'
-            color='white'
+            size='24px'
+            color='#02b86e'
           />
-
         </li>
         <li>
           <NavItem
             icon={<InvoiceIcon />}
             to={routeEnums.INVOICES}
-            size='28px'
-            color='white'
+            size='24px'
+            color='#02b86e'
           />
         </li>
       </ul>
@@ -51,7 +50,9 @@ export function NavItem ({ to, icon, size, color }) {
 
   return (
     <Link to={`/${to}`} className={isItemActive}>
-      {React.cloneElement(icon, { fill: isActive, size, color })}
+      <div>
+        {React.cloneElement(icon, { fill: isActive, size, color })}
+      </div>
       <small>{firstLetterMayus(to)}</small>
     </Link>
   )

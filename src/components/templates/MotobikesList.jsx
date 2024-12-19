@@ -1,22 +1,24 @@
-import { MODELS } from '../../API/myAPI'
-import { useFetch } from '../../hooks/useFetch'
-import { SquareCard } from '../molecules/SquareCard'
-import { SquareCardsGrid, SquareCardsGridLoader } from '../molecules/SquareCardsGrid'
+import { useState } from 'react'
+import { useModels } from '../../hooks/useModels'
+import { SquareCardLoading, SquareCard } from '../molecules/SquareCard'
+import { SquareCardsGrid } from '../molecules/grids/SquareCardsGrid'
 
 export function MotobikesList () {
-  const { data, loading } = useFetch({
-    endpoint: MODELS
-  })
-
-  if (loading) {
-    return <SquareCardsGridLoader />
-  }
-
+  const [search, setSearch] = useState('')
+  const { ref, loading, motobikes } = useModels({ queryParams: `description[like]=${search}` })
   return (
-    <SquareCardsGrid>
-      {data.data.map(d => (
-        <SquareCard key={d.id} text={d.description} />
-      ))}
-    </SquareCardsGrid>
+    <>
+      <input
+        type='text'
+        onChange={() => setSearch(event.target.value)}
+      />
+      <SquareCardsGrid>
+        {motobikes.map(d => (
+          <SquareCard key={d.id} text={d.description} />
+        ))}
+        {loading ? <SquareCardLoading quantity={40} /> : null}
+        <div ref={ref} />
+      </SquareCardsGrid>
+    </>
   )
 }

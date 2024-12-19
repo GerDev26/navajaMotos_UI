@@ -30,5 +30,5 @@ export function SquareCardsGrid ({ children }) {
 
 SquareCardsGrid.propTypes = {
   loading: PropTypes.bool,
-  children: PropTypes.element
+  children: PropTypes.node
 }

@@ -2,20 +2,22 @@
     display: grid;
     grid-template-rows: 9fr 1fr;
     grid-template-columns: none;
-    height: 100vh;
+    height: 100dvh;
     width: 100vw;
+    gap: var(--spacing-2);
 }
 .navigation-grid header {
     grid-row: 2/3;
+    overflow: hidden;
 }
 .navigation-grid main {
-    overflow: scroll;
+    overflow-y: scroll;
     width: 100%;
-    padding: var(--spacing-1);
+    padding-inline: var(--spacing-2);
 }
 @media (min-width: 768px) {
     .navigation-grid {
-        grid-template-columns: 1.5fr 8.5fr;
+        grid-template-columns: 1fr 9fr;
         grid-template-rows: none;
     }
     .navigation-grid header {
@@ -23,5 +25,6 @@
     }
     .navigation-grid main {
         min-height: 100vh;
+        padding: var(--spacing-3);
     }
 }

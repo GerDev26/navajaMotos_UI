@@ -1,0 +1,6 @@
+:root {
+    --card-shadow: 0px 1px 5px 1px var(--neutral-100);
+    --desktop-navbar-item-shadow: 0px 1px 5px 0px var(--neutral-100);
+    --desktop-navbar-shadow: 5px 0px 5px 0px var(--neutral-100);
+    --mobile-navbar-shadow: 0px -5px 5px 0px var(--neutral-100);
+}

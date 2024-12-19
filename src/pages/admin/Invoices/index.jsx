@@ -1,4 +1,4 @@
-import { UserIcon } from '../../assets/icons/UserIcon'
+import { UserIcon } from '../../../assets/icons/UserIcon'
 
 export function Invoices () {
   return (
