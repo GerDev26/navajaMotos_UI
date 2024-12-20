@@ -1,5 +1,6 @@
 export const routeEnums = {
   USERS: 'usuarios',
   MOTOBIKES: 'motos',
-  INVOICES: 'faturas'
+  INVOICES: 'faturas',
+  MOTOBIKES_PREVIEW: 'motos/:model'
 }

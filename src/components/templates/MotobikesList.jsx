@@ -1,23 +1,26 @@
-import { useState } from 'react'
 import { useModels } from '../../hooks/useModels'
-import { SquareCardLoading, SquareCard } from '../molecules/SquareCard'
+import { SquareCard } from '../molecules/SquareCard'
 import { SquareCardsGrid } from '../molecules/grids/SquareCardsGrid'
+import { useLocation } from 'react-router-dom'
 
 export function MotobikesList () {
-  const [search, setSearch] = useState('')
-  const { ref, loading, motobikes } = useModels({ queryParams: `description[like]=${search}` })
+  const location = useLocation()
+  const search = new URLSearchParams(location.search).get('model') || ''
+  const { ref, loading, models } = useModels({ search })
+
   return (
     <>
-      <input
-        type='text'
-        onChange={() => setSearch(event.target.value)}
-      />
-      <SquareCardsGrid>
-        {motobikes.map(d => (
-          <SquareCard key={d.id} text={d.description} />
-        ))}
-        {loading ? <SquareCardLoading quantity={40} /> : null}
-        <div ref={ref} />
+      <form>
+        <input name='model' type='text' />
+      </form>
+      <SquareCardsGrid loading={loading} infinityScrollObserver={ref}>
+        {
+          models
+            ? models.map(d => (
+              <SquareCard key={d.id} text={d.description} />
+            ))
+            : null
+        }
       </SquareCardsGrid>
     </>
   )

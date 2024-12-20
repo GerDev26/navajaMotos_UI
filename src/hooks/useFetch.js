@@ -3,21 +3,23 @@ import { useEffect, useState } from 'react'
 const initialState = {
   endpoint: '',
   headers: {},
-  queryParams: ''
+  method: 'GET'
 }
 
-export function useFetch ({ endpoint, headers, queryParams } = initialState) {
+export function useFetch ({ endpoint, headers, method } = initialState) {
   const [data, setData] = useState()
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    const url = queryParams ? `${endpoint}?${queryParams}` : endpoint
     setLoading(true)
-    fetch(url, {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-      ...headers
+    fetch(endpoint, {
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        ...headers
+      },
+      method
     })
       .then(res => res.json())
       .then(data => {
@@ -25,10 +27,10 @@ export function useFetch ({ endpoint, headers, queryParams } = initialState) {
         setLoading(false)
       })
       .catch(error => {
-        console.log(error)
+        console.error(error)
         setLoading(false)
         setError(true)
       })
-  }, [queryParams, endpoint])
+  }, [endpoint])
   return { data, loading, error }
 }

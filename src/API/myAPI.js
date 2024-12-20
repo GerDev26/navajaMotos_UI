@@ -6,4 +6,4 @@ const API_URL = {
 
 const API = API_URL.local
 
-export const MODELS = `${API}/vehicle/model`
+export const MODELS_ENDPOINT = `${API}/vehicle/model`

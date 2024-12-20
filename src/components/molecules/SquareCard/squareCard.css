@@ -8,12 +8,8 @@
     transition: all 100ms ease-in-out;
     padding: var(--spacing-1);
     box-shadow: var(--card-shadow);
-
-    &&:hover{
-    }
-
-    &&:active{
-    }
+    color: var(--neutral-800);
+    text-decoration: none;
 }
 .square-card h4 {
     margin: 5px;

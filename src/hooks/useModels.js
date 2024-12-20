@@ -1,12 +1,12 @@
 import { useIntersectionObserver } from '@uidotdev/usehooks'
 import { useEffect, useState } from 'react'
-import { MODELS } from '../API/myAPI'
+import { MODELS_ENDPOINT } from '../API/myAPI'
 import { useFetch } from './useFetch'
 
-export const useModels = ({ queryParams = '' }) => {
+export const useModels = ({ search = '' }) => {
   const [ref, entry] = useIntersectionObserver()
-  const [url, setUrl] = useState(MODELS)
-  const [motobikes, setMotobikes] = useState([])
+  const [url, setUrl] = useState(`${MODELS_ENDPOINT}?description[like]=${search}`)
+  const [models, setModels] = useState([])
 
   const { data, loading, error } = useFetch({
     endpoint: url
@@ -16,11 +16,13 @@ export const useModels = ({ queryParams = '' }) => {
     if (data) {
       if (entry?.isIntersecting === true && data?.next_page_url) {
         setUrl(data.next_page_url)
-        setMotobikes((prevState) => [...prevState, ...data.data])
-        console.log('hola')
+        setModels((prevState) => [...prevState, ...data.data])
+      }
+      if (models.length === 0) {
+        setModels(data.data)
       }
     }
-  }, [entry?.isIntersecting, queryParams])
+  }, [entry?.isIntersecting])
 
-  return { ref, motobikes, loading, error }
+  return { ref, models, loading, error }
 }

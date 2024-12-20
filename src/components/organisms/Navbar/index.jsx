@@ -29,9 +29,12 @@ export function Navbar () {
 }
 
 export function NavItem ({ to, icon }) {
-  const path = useLocation()
+  const url = useLocation()
 
-  const isActive = path.pathname === `/${to}`
+  const path = url.pathname.substring(0, to.length)
+  console.log(path)
+
+  const isActive = path === `/${to}`
   const iconBackground = isActive ? 'navbar__menu__item__icon--active' : ''
   const fontStyle = isActive ? { fontWeight: 500 } : { fontWeight: 300 }
 
