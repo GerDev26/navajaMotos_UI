@@ -1,5 +1,5 @@
 import { useModels } from '../../hooks/useModels'
-import { SquareCard } from '../molecules/SquareCard'
+import { SquareCard } from '../molecules/cards/SquareCard'
 import { SquareCardsGrid } from '../molecules/grids/SquareCardsGrid'
 import { useLocation } from 'react-router-dom'
 

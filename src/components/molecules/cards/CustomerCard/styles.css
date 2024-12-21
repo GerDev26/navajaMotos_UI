@@ -1,0 +1,27 @@
+.customer-card{
+    background-color: var(--neutral-50);
+    cursor: pointer;
+    padding: 20px;
+    border-radius: var(--border-radius-1);
+    border-bottom: 4px solid var(--primary-500);
+    min-height: 80px;
+    max-width: 400px;
+    transition: all 100ms ease-in-out;
+    padding: var(--spacing-1);
+    box-shadow: var(--card-shadow);
+    color: var(--neutral-800);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.customer-card div {
+    padding: var(--spacing-1);
+}
+.customer-card div:first-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.customer-card div:last-child{
+    text-align: right;
+}

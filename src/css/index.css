@@ -25,6 +25,10 @@ main {
   scrollbar-width: thin; /* Navegadores Firefox */
   scrollbar-color: var(--primary-500) var(--neutral-50); /* Color del scroll y del fondo */
 }
+a{
+  text-decoration: none;
+  color: var(--neutral-800);
+}
 
 /* Para navegadores basados en WebKit (Chrome, Edge, Safari) */
 main::-webkit-scrollbar {

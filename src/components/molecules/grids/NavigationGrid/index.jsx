@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import './navigationGrid.css'
+import './styles.css'
 
 export function NavigationGrid ({ navbar, content }) {
   return (

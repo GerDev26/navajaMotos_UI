@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
-import './squareCardsGrid.css'
-import { SquareCardLoading } from '../../SquareCard'
+import './styles.css'
+import { SquareCardLoading } from '../../cards/SquareCard'
 
 export function SquareCardsGrid ({ children, loading, infinityScrollObserver }) {
   const renderContent = () => {

@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom'
-import './squareCard.css'
+import './styles.css'
 import PropTypes from 'prop-types'
-import { routeEnums } from '../../../enums/routeEnums'
 
-export function SquareCard ({ text }) {
+export function SquareCard ({ text = '' }) {
   return (
-    <Link to={`${text.replace(/ /g, '-')}`} className='square-card'>
-      <article>
+    <Link to={`${text.replace(/ /g, '-')}`}>
+      <article className='square-card'>
         <h4>{text}</h4>
       </article>
     </Link>

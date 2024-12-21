@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { InvoiceIcon } from '../../../assets/icons/InvoiceIcon'
 import { MotobikeIcon } from '../../../assets/icons/MotobikeIcon'
 import { UserIcon } from '../../../assets/icons/UserIcon'
-import './navbar.css'
+import './styles.css'
 import { routeEnums } from '../../../enums/routeEnums'
 import { firstLetterMayus } from '../../../helpers/stringHelpers'
 import PropTypes from 'prop-types'
@@ -29,12 +29,11 @@ export function Navbar () {
 }
 
 export function NavItem ({ to, icon }) {
+  // Verifico si la url actual es igual a la url del item
   const url = useLocation()
-
-  const path = url.pathname.substring(0, to.length)
-  console.log(path)
-
+  const path = url.pathname.substring(0, to.length + 1)
   const isActive = path === `/${to}`
+
   const iconBackground = isActive ? 'navbar__menu__item__icon--active' : ''
   const fontStyle = isActive ? { fontWeight: 500 } : { fontWeight: 300 }
 

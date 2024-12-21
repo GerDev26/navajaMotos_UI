@@ -1,0 +1,6 @@
+.row-card-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    gap: var(--spacing-2);
+}

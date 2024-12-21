@@ -1,0 +1,24 @@
+{
+    "id": 1,
+    "description": "Boxer 150",
+    "propietaries": [
+        {
+            "id": 1,
+            "name": "Navaja",
+            "domain": "12123",
+            "username": "asdasd"
+        },
+        {
+            "id": 2,
+            "name": "German",
+            "domain": "12123",
+            "username": "asdasd"
+        },
+        {
+            "id": 3,
+            "name": "Osvaldo",
+            "domain": "12123",
+            "username": "asdasd"
+        }
+    ]
+}
