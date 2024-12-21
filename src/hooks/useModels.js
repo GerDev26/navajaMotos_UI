@@ -1,28 +1,42 @@
 import { useIntersectionObserver } from '@uidotdev/usehooks'
 import { useEffect, useState } from 'react'
 import { MODELS_ENDPOINT } from '../API/myAPI'
-import { useFetch } from './useFetch'
 
-export const useModels = ({ search = '' }) => {
+export function useSearchModels ({ search = '' }) {
   const [ref, entry] = useIntersectionObserver()
-  const [url, setUrl] = useState(`${MODELS_ENDPOINT}?description[like]=${search}`)
   const [models, setModels] = useState([])
+  const [loading, setLoading] = useState()
+  const [error, setError] = useState()
+  const [nextPage, setNextPage] = useState('')
 
-  const { data, loading, error } = useFetch({
-    endpoint: url
-  })
+  const nextModels = () => {
+    fetch(`${nextPage}&description[like]=${search}`)
+      .then(res => res.json())
+      .then(data => {
+        setModels((prevState) => [...prevState, ...data.data])
+        setNextPage(data?.next_page_url)
+      })
+  }
 
   useEffect(() => {
-    if (data) {
-      if (entry?.isIntersecting === true && data?.next_page_url) {
-        setUrl(data.next_page_url)
-        setModels((prevState) => [...prevState, ...data.data])
-      }
-      if (models.length === 0) {
+    setModels([])
+    setError(false)
+    setLoading(true)
+    fetch(`${MODELS_ENDPOINT}?description[like]=${search}`)
+      .then(res => res.json())
+      .then(data => {
         setModels(data.data)
-      }
+        setNextPage(data?.next_page_url)
+        console.log(data)
+      })
+      .catch((error) => setError(error))
+      .finally(() => setLoading(false))
+  }, [search])
+
+  useEffect(() => {
+    if (entry?.isIntersecting === true && nextPage) {
+      nextModels()
     }
   }, [entry?.isIntersecting])
-
-  return { ref, models, loading, error }
+  return { models, error, loading, ref }
 }

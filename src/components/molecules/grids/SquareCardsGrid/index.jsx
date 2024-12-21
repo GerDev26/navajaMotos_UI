@@ -9,11 +9,17 @@ export function SquareCardsGrid ({ children, loading, infinityScrollObserver }) 
     }
     return loading ? '' : <h1>No se encontraron resultados</h1>
   }
+
+  const renderObserver = () => {
+    if (infinityScrollObserver) {
+      return <div ref={infinityScrollObserver} />
+    }
+  }
   return (
     <section className='square-cards-grid'>
       {renderContent()}
       {loading ? <SquareCardLoading quantity={20} /> : ''}
-      <div ref={infinityScrollObserver} />
+      {renderObserver()}
     </section>
   )
 }

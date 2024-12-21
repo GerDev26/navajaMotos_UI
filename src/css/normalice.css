@@ -1,0 +1,19 @@
+li{
+  display: block;
+}
+main {
+  scrollbar-width: thin; /* Navegadores Firefox */
+  scrollbar-color: var(--primary-500) var(--neutral-50); /* Color del scroll y del fondo */
+}
+a{
+  text-decoration: none;
+  color: var(--neutral-800);
+}
+input:focus, textarea:focus, select:focus{
+  outline: none;
+}
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}

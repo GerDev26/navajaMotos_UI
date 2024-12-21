@@ -8,7 +8,6 @@ export const MotobikePreview = () => {
   const { model } = useParams()
 
   const formatedModel = model.replace(/-/g, ' ')
-
   const { loading, data } = useFetch({ endpoint: `${MODELS_ENDPOINT}?description[eq]=${formatedModel}` })
 
   if (loading) return <p>Loading...</p>

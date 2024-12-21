@@ -1,0 +1,10 @@
+.input-model {
+    width: 100%;
+    padding: var(--spacing-2);
+    background-color: var(--neutral-50);
+    border: var(--primary-500) 2px solid;
+    border-radius: var(--border-radius-1);
+    color: var(--neutral-900);
+    font-size: var(--font-size-h5);
+    font-weight: 500;
+}

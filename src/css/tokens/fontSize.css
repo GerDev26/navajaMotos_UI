@@ -23,3 +23,29 @@
   --mobile-font-size-h2: calc(var(--mobile-base-size) * var(--mobile-scale) * var(--mobile-scale) * var(--mobile-scale) * var(--mobile-scale) * var(--mobile-scale));
   --mobile-font-size-h1: calc(var(--mobile-base-size) * var(--mobile-scale) * var(--mobile-scale) * var(--mobile-scale) * var(--mobile-scale) * var(--mobile-scale) * var(--mobile-scale));
 }
+@media (min-width: 768px) {
+  :root {
+    --font-size-small: var(--desktop-font-size-small);
+    --font-size-p: var(--desktop-font-size-p);
+    --font-size-h6: var(--desktop-font-size-h6);
+    --font-size-h5: var(--desktop-font-size-h5);
+    --font-size-h4: var(--desktop-font-size-h4);
+    --font-size-h3: var(--desktop-font-size-h3);
+    --font-size-h2: var(--desktop-font-size-h2);
+    --font-size-h1: var(--desktop-font-size-h1);
+  }
+}
+
+/* Media query para pantallas móviles */
+@media (max-width: 767px) {
+  :root {
+    --font-size-small: var(--mobile-font-size-small);
+    --font-size-p: var(--mobile-font-size-p);
+    --font-size-h6: var(--mobile-font-size-h6);
+    --font-size-h5: var(--mobile-font-size-h5);
+    --font-size-h4: var(--mobile-font-size-h4);
+    --font-size-h3: var(--mobile-font-size-h3);
+    --font-size-h2: var(--mobile-font-size-h2);
+    --font-size-h1: var(--mobile-font-size-h1);
+  }
+}

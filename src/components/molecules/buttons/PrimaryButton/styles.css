@@ -1,0 +1,7 @@
+.primary-button {
+    background-color: var(--primary-500);
+    padding-block: var(--spacing-1);
+    padding-inline: var(--spacing-2);
+    color: var(--neutral-950);
+    border-radius: var(--border-radius-1);
+}

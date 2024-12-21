@@ -1,0 +1,8 @@
+.search-bar-with-button{
+    display: flex;
+    gap: var(--spacing-4);
+    padding-block: var(--spacing-3);
+    position: sticky;
+    top: 0;
+    background-color: var(--neutral-100);
+}
